@@ -29,7 +29,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Silakan Login Dulu</p>
+      <p class="login-box-msg">Silakan Login Dahulu</p>
 
       <form action="{{ route('login')}}" method="post">
         @csrf
