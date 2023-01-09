@@ -266,7 +266,9 @@ function new_transaksi(){
   $("#btn-save").removeClass("d-none");
   $("#btn-new").addClass("d-none");
 }
-
+function cetak(){
+  $(window.print());
+}
 //Searching transaksi
 function searching() {
     var value =  $("#search").val().toLowerCase();

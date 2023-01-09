@@ -84,7 +84,7 @@
                             <div class="other-item">
                                 <div class="row">
                                     <div class="item col-md-7">
-                                        <p><strong>PPN 10%</strong></p>
+                                        <p><strong>TAX</strong></p>
                                     </div>
                                     <div class="price col-md-5">
                                         <p id="ppn"><span>Rp </span> 0</p>
@@ -100,7 +100,7 @@
                                     <a id="btn-new" href="javascript:void(0)" class="btn btn-block btn-flat btn-info d-none" onclick="new_transaksi()">NEW TRANSAKSI</a>          
                                 </div>
                                 <div class="nav-item col-md-6">
-                                    <a id="btn-print" href="javascript:void(0)" data-url="{{ url("transaksi/nota") }}" class="btn btn-block btn-flat btn-info">PRINT BILL</a> 
+                                    <a id="btn-print" href="javascript:void(0)" data-url="{{ url("transaksi/nota") }}" class="btn btn-block btn-flat btn-info" onclick="print()">PRINT BILL</a> 
                                 </div>                            
                             </div>
                         </div>
