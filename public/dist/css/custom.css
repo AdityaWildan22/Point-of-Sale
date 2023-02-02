@@ -51,7 +51,7 @@ img.avatar {
 #transaksi .transaksi .charge .other p { position: relative; margin: 0; }
 #transaksi .transaksi .charge .other .price { position: relative; text-align: right; }
 
-#transaksi .transaksi .charge .nav { position: relative; padding: 5px 0; }
+#transaksi .transaksi .charge .nav { position: relative; padding: 6px 0; }
 #transaksi .transaksi .charge .nav .row { margin: 0;  }
 #transaksi .transaksi .charge .nav .nav-item { padding: 0;  }
 #transaksi .transaksi .charge #amount { position: relative; padding: 5px; margin: 5px 0 0 0;  background: #343a40;  color: #fff; text-align: center; }
