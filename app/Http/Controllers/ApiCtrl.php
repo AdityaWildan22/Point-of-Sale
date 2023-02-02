@@ -29,7 +29,7 @@ class ApiCtrl extends Controller
         ->groupByRaw("cafe_menu.id_menu,cafe_menu.kd_menu,cafe_menu.nm_menu,cafe_menu.kategori,cafe_menu.dapur,cafe_menu.harga,cafe_menu.stok,cafe_menu.satuan,cafe_menu.desc,cafe_menu.foto,cafe_menu.fav,cafe_menu.created_at,cafe_menu.updated_at")
         ->orderByRaw("SUM(tb_detail_transaksi.jumlah) DESC")
         ->limit(10)
-        ->get();
+        ->get();    
 
         return response()->json(collect($menu));
     }
@@ -108,47 +108,45 @@ class ApiCtrl extends Controller
     function member(Request $req){
         $dtMember = $req->json()->all();
         $kode = "SC".Str::upper(Str::random(3));
-        
-        //return response()->json($dtMember);
-        //Update Data Member
-        $save = Member::UpdateorCreate(
-            [
-                "id_member" => $dtMember["id_member"]
-            ],
-            [
-                "kd_member"=>$kode,
-                "nm_member"=>$dtMember["nm_member"],
-                "alamat"=>$dtMember["alamat"],
-                "kota"=>$dtMember["kota"],
-                "telp"=>$dtMember["telp"],
-                "jk"=>$dtMember["jk"],
-                "status"=>1,
-                "foto"=>$dtMember["foto"],
-            ]
-        );
+            //return response()->json($dtMember);
+            //Update Data Member
+            $save = Member::UpdateorCreate(
+                [
+                    "id_member" => $dtMember["id_member"]
+                ],
+                [
+                    "kd_member"=>$kode,
+                    "nm_member"=>$dtMember["nm_member"],
+                    "alamat"=>$dtMember["alamat"],
+                    "kota"=>$dtMember["kota"],
+                    "telp"=>$dtMember["telp"],
+                    "jk"=>$dtMember["jk"],
+                    "status"=>1,
+                    "foto"=>$dtMember["foto"],
+                ]
+            );
 
-        if($save){
-            //Get Data User And Member
-            $user = User::where("id",$dtMember["user_id"])->first();
-            $member = Member::where("kd_member",$kode)->first();
+            if($save){
+                //Get Data User And Member
+                $user = User::where("id",$dtMember["user_id"])->first();
+                $member = Member::where("kd_member",$kode)->first();
 
-            //Update id Member to Users Table Where Success  Save Member
-            if($dtMember["id_member"]==""){
-                User::where("id",$dtMember["user_id"])->update([
-                    "id_member"=>$member->id_member
-                ]);
-            }
+                //Update id Member to Users Table Where Success  Save Member
+                if($dtMember["id_member"]==""){
+                    User::where("id",$dtMember["user_id"])->update([
+                        "id_member"=>$member->id_member
+                    ]);
+                }
 
-            if($dtMember["id_member"]==""){
-                $mess = ["error"=>0,"mess"=>"Registrasi Member Behasil !","data"=>["user"=>collect($user),"member"=>collect($member)]];
+                if($dtMember["id_member"]==""){
+                    $mess = ["error"=>0,"mess"=>"Registrasi Member Behasil !","data"=>["user"=>collect($user),"member"=>collect($member)]];
+                } else {
+                    $mess = ["error"=>0,"mess"=>"Data Berhasil Di Update !","data"=>["user"=>collect($user),"member"=>collect($member)]];
+                }
+
             } else {
-                $mess = ["error"=>0,"mess"=>"Data Berhasil Di Update !","data"=>["user"=>collect($user),"member"=>collect($member)]];
+                $mess = ["error"=>1,"mess"=>"Maaf Ada Kesalahan !","data"=>null];
             }
-
-        } else {
-            $mess = ["error"=>1,"mess"=>"Maaf Ada Kesalahan !","data"=>null];
-        }
-
         return response()->json($mess);
     }
 
