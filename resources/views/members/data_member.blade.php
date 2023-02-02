@@ -14,7 +14,7 @@
 <div class="card">
     <div class="card-header">
         <div class="card-title">
-         <a href="{{ url('member/form') }}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i>ADD NEW</a>
+         <a href="{{ url('member/form') }}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> TAMBAH</a>
         </div>
     </div>
     <div class="card-body">
