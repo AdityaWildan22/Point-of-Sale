@@ -107,7 +107,7 @@ class ApiCtrl extends Controller
 
     function member(Request $req){
         $dtMember = $req->json()->all();
-        $kode = "SC".Str::upper(Str::random(4));
+        $kode = "SC".Str::upper(Str::random(3));
         
         //return response()->json($dtMember);
         //Update Data Member
