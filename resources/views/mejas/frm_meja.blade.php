@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="kapasitas">Kapasitas</label>
                             <select class="custom-select rounded-0 @error("kapasitas") is-invalid  @enderror" id="kapasitas" name="kapasitas">
-                                <option value="">- Pilih Kapasitas -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih Kapasitas -</option>
                                 <option {{ @$rsMeja->kapasitas == "2 Orang" ? "selected" : "" }} value="1">2 Orang</option>
                                 <option {{ @$rsMeja->kapasitas == "4 Orang" ? "selected" : "" }} value="2">4 Orang</option>
                                 <option {{ @$rsMeja->kapasitas == "6 Orang" ? "selected" : "" }} value="3">6 Orang</option>
@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select class="custom-select rounded-0  @error("status") is-invalid  @enderror" id="status" name="status">
-                                <option value="">- Pilih Status -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih Status -</option>
                                 <option {{ @$rsMember->status =="Kosong" ?"selected" : "" }} value="Kosong">Kosong</option>
                                 <option {{ @$rsMember->status =="Terisi" ?"selected" : "" }} value="Terisi">Terisi</option>
                             </select>

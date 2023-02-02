@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="kategori">Jenis kategori</label>
                             <select class="custom-select rounded-0 @error("kategori") is-invalid  @enderror" id="kategori" name="kategori">
-                                <option value="">- Pilih kategori -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih kategori -</option>
                                 <option {{ @$rsMenu->kategori == "Makanan" ? "selected" : "" }} value="Makanan">Makanan</option>
                                 <option {{ @$rsMenu->kategori == "Minuman" ? "selected" : "" }} value="Minuman">Minuman</option>
                                 <option {{ @$rsMenu->kategori == "Snack" ? "selected" : "" }} value="Snack">Snack</option>
@@ -64,7 +64,7 @@
                         </div>                       
                         <div class="form-group">
                             <label for="harga">Harga</label>
-                            <input type="harga" class="form-control @error("harga") is-invalid  @enderror" id="harga" name="harga" placeholder="harga" value="{{ old("harga") ? old("harga") : @$rsMenu->harga }}">
+                            <input type="harga" class="form-control @error("harga") is-invalid  @enderror" id="harga" name="harga" placeholder="Harga" value="{{ old("harga") ? old("harga") : @$rsMenu->harga }}">
                             @error("harga")
                             <span id="error-harga" class="error invalid-feedback">
                                 {{ $errors->first("harga") }}
@@ -82,7 +82,7 @@
                         </div>
                         <div class="form-group">
                             <label for="desc">Deskripsi</label>
-                            <input type="desc" class="form-control @error("desc") is-invalid  @enderror" id="desc" name="desc" placeholder="desc" value="{{ old("desc") ? old("desc") : @$rsMenu->desc}}">
+                            <input type="desc" class="form-control @error("desc") is-invalid  @enderror" id="desc" name="desc" placeholder="Deskripsi" value="{{ old("desc") ? old("desc") : @$rsMenu->desc}}">
                             @error("desc")
                             <span id="error-desc" class="error invalid-feedback">
                                 {{ $errors->first("desc") }}
@@ -92,7 +92,7 @@
                         <div class="form-group">
                             <label for="dapur">Jenis Dapur</label>
                             <select class="custom-select rounded-0 @error("dapur") is-invalid  @enderror" id="dapur" name="dapur">
-                                <option value="">- Pilih Dapur -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih Dapur -</option>
                                 <option {{ @$rsMenu->dapur == "Makanan" ? "selected" : "" }} value="Makanan">Makanan</option>
                                 <option {{ @$rsMenu->dapur == "Minuman" ? "selected" : "" }} value="Minuman">Minuman</option>
                                 <option {{ @$rsMenu->dapur == "Snack" ? "selected" : "" }} value="Snack">Snack</option>
@@ -106,7 +106,7 @@
                         <div class="form-group">
                             <label for="stok">Status</label>
                             <select class="custom-select rounded-0 @error("stok") is-invalid  @enderror" id="stok" name="stok">
-                                <option value="">- Pilih Status -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih Status -</option>
                                 <option {{ @$rsMenu->stok == "Available" ? "selected" : "" }} value="Available">Available</option>
                                 <option {{ @$rsMenu->stok == "Not Available" ? "selected" : "" }} value="Not Available">Not Available</option>
                             </select>

@@ -100,8 +100,8 @@ function closeFullscreen() {
 function pilih_member(id_member, nama) {
   $("#nm_member").html(nama);
   $("#id_member").val(id_member);
-  $("#diskon").html('<span>Rp</span> ' + number_format(15000));
-  $("#txtDiskon").val(15000);
+  $("#diskon").html('<span>Rp</span> ' + number_format(5000));
+  $("#txtDiskon").val(5000);
   // $("#diskon").html('<span>Rp</span> ' + number_format(10/100 * subtotal));
   // $("#txtDiskon").val(10/100 * subtotal);
   
@@ -212,6 +212,8 @@ function save_transaksi() {
   // Validasi
   if ($("#id_meja").val() == "") { showMessage("error","Maaf Meja Belum Dipilih !!!","#transaksi"); return; }
   if ($(".detail .detail-item").length == 0) { showMessage("error","Maaf Menu Belum Dipilih !!!","#transaksi"); return; }
+
+  if ($("#id_member").val() == "") { showMessage("error","Maaf Member Belum Dipilih !!!","#transaksi"); return; }
 
   // Save
   $.ajax({

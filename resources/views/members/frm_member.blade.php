@@ -75,7 +75,7 @@
                     <div class="form-group">
                         <label for="jk">Jenis Kelamin</label>
                         <select class="custom-select rounded-0 @error("jk") is-invalid  @enderror" id="jk" name="jk">
-                            <option value="">- Pilih Jenis Kelamin -</option>
+                            <option value="" selected="true" disabled="disabled">- Pilih Jenis Kelamin -</option>
                             <option {{ @$rsMember->jk ==1 ?"selected" : "" }} value="1">Laki-Laki</option>
                             <option {{ @$rsMember->jk ==2 ?"selected" : "" }} value="2">Perempuan</option>
                         </select>
@@ -88,7 +88,7 @@
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select class="custom-select rounded-0  @error("status") is-invalid  @enderror" id="status" name="status">
-                            <option value="">- Pilih Status -</option>
+                            <option value="" selected="true" disabled="disabled">- Pilih Status -</option>
                             <option {{ @$rsMember->status ==1 ?"selected" : "" }} value="1">Aktif</option>
                             <option {{ @$rsMember->status ==2 ?"selected" : "" }} value="2">Non Aktif</option>
                         </select>

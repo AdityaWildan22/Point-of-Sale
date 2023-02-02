@@ -11,8 +11,8 @@ class UserCtrl extends Controller
     function index(){
         //Data User
         $data = [
-            "title" => "User",
-            "page_title" => "User",
+            "title" => "Data User",
+            "page_title" => "Data User",
             "users" =>User::All()
         ];
 
@@ -20,9 +20,9 @@ class UserCtrl extends Controller
     }
 
     function form(Request $req){
-        $mode = $req->id!= "" ? "Edit " : " Tambah User Baru ";
+        $mode = $req->id!= "" ? "Edit User" : " Tambah User Baru ";
         $data = [
-            "title" => $mode."User",
+            "title" => $mode,
             "page_title" => $mode,
             "rsUser" => User::where("id",$req->id)->first()
         ];

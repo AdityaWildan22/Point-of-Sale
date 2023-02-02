@@ -10,8 +10,8 @@ class MejaCtrl extends Controller
     function index(){
         //Data Member
         $data = [
-            "title" => "Meja",
-            "page_title" => "Meja",
+            "title" => "Data Meja",
+            "page_title" => "Data Meja",
             "meja" =>Meja::All()
         ];
 
@@ -19,9 +19,9 @@ class MejaCtrl extends Controller
     }
 
     function form(Request $req){
-        $mode = $req->id!= "" ? "Edit " : "Tambah Meja Baru ";
+        $mode = $req->id!= "" ? "Edit Meja " : "Tambah Meja Baru ";
         $data = [
-            "title" => $mode."Meja",
+            "title" => $mode,
             "page_title" => $mode,
             "rsMeja" => Meja::where("id_meja",$req->id)->first()
         ];

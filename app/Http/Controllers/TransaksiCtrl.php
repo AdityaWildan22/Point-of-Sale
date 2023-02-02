@@ -27,8 +27,8 @@ class TransaksiCtrl extends Controller
 
         //Data Page
         $data = [
-            "title" => "Transaksi",
-            "page_title" => "Transaksi",
+            "title" => "Data Transaksi",
+            "page_title" => "Data Transaksi",
             "transaksi" => $transaksi
         ];
 

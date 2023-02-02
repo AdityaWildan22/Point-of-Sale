@@ -11,8 +11,8 @@ class MenuCtrl extends Controller
     function index(){
         //Data Menu
         $data = [
-            "title" => "Menu",
-            "page_title" => "Menu",
+            "title" => "Data Menu",
+            "page_title" => "Data Menu",
             "menu" => Menu::All()
         ];
 
@@ -20,9 +20,9 @@ class MenuCtrl extends Controller
     }
 
     function form(Request $req){
-        $mode = $req->id!= "" ? "Edit " : " Tambah Menu Baru ";
+        $mode = $req->id!= "" ? "Edit Menu" : " Tambah Menu Baru ";
         $data = [
-            "title" => $mode."Menu",
+            "title" => $mode,
             "page_title" => $mode,
             "rsMenu" => Menu::where("id_menu",$req->id)->first()
         ];

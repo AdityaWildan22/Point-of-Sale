@@ -81,13 +81,15 @@ Route::group(['middleware' => ['isOperator']],function(){
     Route::get('reports/menu',[ReportCtrl::class,'rpt_menu']);
     Route::get('reports/member',[ReportCtrl::class,'rpt_member']);
 
+    // Profile
+    Route::get('/profile',[ProfileCtrl::class,'index']);
+    Route::post('/profile/save',[ProfileCtrl::class,'update']);
+
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Profile
-Route::get('/profile',[ProfileCtrl::class,'index']);
-Route::post('/profile/save',[ProfileCtrl::class,'update']);
+
 

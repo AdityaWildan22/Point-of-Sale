@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label for="id_member">Nama Member</label>
                         <select name="id_member" id="member" class="form-control" required>
-                            <option value="">- Pilih Member -</option>
+                            <option value="" selected="true" disabled="disabled">- Pilih Member -</option>
                             @foreach ($member as $rsMember)
                                 <option value="{{ $rsMember["id_member"]}}">{{ $rsMember["nm_member"]}}</option>
                             @endforeach

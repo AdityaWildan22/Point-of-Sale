@@ -7,7 +7,7 @@
         <title>NOTA</title>
         <style>
             @page , body { margin:0; padding: 0; }
-            #nota { max-width: 150px; }
+            #nota { max-width: 190px; }
             #nota header { text-align: center; }
             #nota header .logo { width: 70%; }
             #nota header p { font-family: Tahoma; font-size: 12px; margin: 0; padding: 0; }
@@ -19,7 +19,7 @@
             #nota td.price { vertical-align: top; text-align: right; font-size: 16px; }
             #nota .grandtotal { border-top: 1px solid #000; border-bottom: 1px solid #000; margin: 5px 0; padding: 5px 0; }
             #nota .grandtotal table tr td { font-size: 12px; font-family: Tahoma; }
-            #nota .thank p { text-align: center; }
+            #nota .thank p { text-align: center;font-size: 13px }
 
             #nota .qrcode > div { margin: 0 auto; margin-top: 10px; margin-bottom: 5px; }
         </style>

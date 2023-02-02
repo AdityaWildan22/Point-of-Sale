@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label for="role">Pilih Role</label>
                             <select class="custom-select rounded-0 @error("role") is-invalid  @enderror" id="role" name="role">
-                                <option value="">- Pilih Role -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih Role -</option>
                                 <option {{ @$rsUser->role == "Admin" ? "selected" : "" }} value="Admin">Admin</option>
                                 <option {{ @$rsUser->role == "Operator" ? "selected" : "" }} value="Operator">Operator</option>
                                 <option {{ @$rsUser->role == "Member" ? "selected" : "" }} value="Member">Member</option>
@@ -72,7 +72,7 @@
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select class="custom-select rounded-0 @error("status") is-invalid  @enderror" id="status" name="status">
-                                <option value="">- Pilih Status -</option>
+                                <option value="" selected="true" disabled="disabled">- Pilih Status -</option>
                                 <option {{ @$rsUser->status == 1 ? "selected" : "" }} value="1">Aktif</option>
                                 <option {{ @$rsUser->status == 2 ? "selected" : "" }} value="2">Non Aktif</option>
                             </select>

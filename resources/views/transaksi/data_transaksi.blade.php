@@ -38,7 +38,7 @@
                @foreach($transaksi as $rsTransaksi)
                     <tr>
                         <td> {!! DNS2D::getBarcodeHTML(($rsTransaksi->nota), 'QRCODE',5,5) !!}</td>
-                        <td>{{ $rsTransaksi->tanggal=Carbon\Carbon::now()->isoFormat('DD-MM-Y HH:mm:ss') }}</td>
+                        <td>{{ $rsTransaksi->tanggal}}</td>
                         <td>{{ $rsTransaksi->name }}</td>
                         <td>{{ $rsTransaksi->nm_member }}</td>
                         <td>{{ number_format($rsTransaksi->gtotal,"0",",",".") }}</td>

@@ -13,8 +13,8 @@ class MemberCtrl extends Controller
     function index(){
         //Data Member
         $data = [
-            "title" => "Member",
-            "page_title" => "Member",
+            "title" => "Data Member",
+            "page_title" => "Data Member",
             "members" => Member::All()
         ];
 
@@ -22,9 +22,9 @@ class MemberCtrl extends Controller
     }
 
     function form(Request $req){
-        $mode = $req->id!= "" ? "Edit " : " Tambah Member Baru ";
+        $mode = $req->id!= "" ? "Edit Member " : " Tambah Member Baru ";
         $data = [
-            "title" => $mode."Member",
+            "title" => $mode,
             "page_title" => $mode,
             "rsMember" => Member::where("id_member",$req->id)->first()
         ];

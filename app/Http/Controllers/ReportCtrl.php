@@ -11,8 +11,8 @@ class ReportCtrl extends Controller
 
     function index(){
         $data = [
-            "title" => "Report",
-            "page_title" => "Report",
+            "title" => "Laporan Transaksi",
+            "page_title" => "Laporan Transaksi",
             "member" => Member::All()
             // "users" => User::All()
         ];

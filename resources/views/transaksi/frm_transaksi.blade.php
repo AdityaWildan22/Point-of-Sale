@@ -72,6 +72,18 @@
                             <div class="other-item">
                                 <div class="row">
                                     <div class="item col-md-7">
+                                        <p><strong>Total</strong></p>
+                                    </div>
+                                    <div class="price col-md-5">
+                                        <p id="total" ><span>Rp</span> 0</p>
+                                        <input type="hidden" name="total" id="txtTotal" value="0">
+                                        {{-- <p>Diskon : <input class="jumlah" name="jumlah[]" onchange="ganti_harga(this)" type="number" min="0" value="0" data-harga=""></p> --}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="other-item">
+                                <div class="row">
+                                    <div class="item col-md-7">
                                         <p><strong>Discount</strong></p>
                                     </div>
                                     <div class="price col-md-5">
