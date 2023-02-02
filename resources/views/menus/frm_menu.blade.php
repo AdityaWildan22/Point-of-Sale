@@ -17,7 +17,7 @@
     <form action="{{ url('menu/save') }}" method="post" enctype="multipart/form-data">
         @csrf {{-- Token Keamanan --}}
         <div class="row">
-            <div class="dt_foto col-md-4">
+            <div class="dt_foto col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <img id="avatar" src="{{ @$rsMenu->foto != "" ? $rsMenu->foto : asset('images/no-images.jpg')}}" alt="">
@@ -26,7 +26,7 @@
                     </div>
                 </div>                
             </div>
-            <div class="dt_menu col-md-8">
+            <div class="dt_menu col-md-9">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">

@@ -14,7 +14,7 @@
 <form action="{{ url('member/save')}}" method="post">
     @csrf
     <div class="row">
-        <div class="dt_foto col-md-4">
+        <div class="dt_foto col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <img id="avatar" src="{{ @$rsMember->foto != "" ? $rsMember->foto : asset('images/no-images.jpg')}}" alt="">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
         </div>
-        <div class="dt_member col-md-8">
+        <div class="dt_member col-md-9">
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
