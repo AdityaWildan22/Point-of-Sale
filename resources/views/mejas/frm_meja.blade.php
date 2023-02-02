@@ -14,10 +14,10 @@
     <form action="{{ url('meja/save') }}" method="post">
         @csrf {{-- Token Keamanan --}}
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 
             </div>
-            <div class="dt_meja col-md-8">
+            <div class="dt_meja col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
 
                 </div>
             </div>
