@@ -39,7 +39,7 @@
                 <th>Tanggal</th>
                 <th>Kasir</th>
                 <th>Member</th>
-                <th>Pajak</th>
+                <th>Tax</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -60,15 +60,15 @@
                 @endphp
             @endforeach
             <tr>
-                <td colspan="5"><strong>Total Sebelum Pajak</strong></td>
+                <td colspan="6"><strong>Total Sebelum Pajak</strong></td>
                 <td  class="right">{{ number_format(($total),"0",",",".") }}</td>
             </tr>
             <tr>
-                <td colspan="5"><strong>Pajak</strong></td>
+                <td colspan="6"><strong>Tax</strong></td>
                 <td  class="right">{{ number_format(($pajak),"0",",",".") }}</td>
             </tr>            
             <tr>
-                <td colspan="5"><strong>Total Setelah Pajak</strong></td>
+                <td colspan="6"><strong>Total Setelah Pajak</strong></td>
                 <td  class="right">{{ number_format(($total-$pajak),"0",",",".") }}</td>
             </tr>
         </tbody>

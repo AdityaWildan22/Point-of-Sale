@@ -107,6 +107,9 @@
    </div>
    <h3>Pendapatan</h3>
     <div class="row">
+        <div class="col-md-1">
+            
+        </div>
         {{-- <div class="col-md-2">
             
         </div>
@@ -172,7 +175,7 @@
             </div>
             <!-- /.info-box -->
         </div>
-        <div class="col-12 col-sm-4 col-md-3">
+        {{-- <div class="col-12 col-sm-4 col-md-3">
             <div class="info-box mb-6">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-dollar-sign"></i></span>
 
@@ -183,7 +186,7 @@
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
-        </div>
+        </div> --}}
         <div class="col-12 col-sm-4 col-md-3">
             <div class="info-box mb-6">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-dollar-sign"></i></span>

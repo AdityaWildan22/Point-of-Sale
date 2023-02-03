@@ -5,13 +5,13 @@
 @section("page_title","Profile")
 
 @section('content') 
-  <script>
-    $(function(){
-      @if($errors->any())
-      showMessage("error", "Terjadi Kesalahan !");
+<script>
+  $(function(){
+      @if(session("type"))
+          showMessage('{{ session("type") }}','{{ session("text") }}');
       @endif
-    });
-  </script>
+  });
+</script>
       <!-- Main content -->
       <section class="content">
           <div class="row">

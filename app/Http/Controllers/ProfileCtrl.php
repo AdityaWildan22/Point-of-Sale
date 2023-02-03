@@ -25,13 +25,16 @@ class ProfileCtrl extends Controller
     }
 
     function update(Request $req){
-        
-        User::where("id",$req->input("id"))->update([
-            "name"=>$req->input("name"),
-            "email"=>$req->input("email"),
-            "password"=> $req->input("password") == "" ? $req->input("old_password") : Hash::make($req->input("password")),
-        ]);
-
+        try{
+            User::where("id",$req->input("id"))->update([
+                "name"=>$req->input("name"),
+                "email"=>$req->input("email"),
+                "password"=> $req->input("password") == "" ? $req->input("old_password") : Hash::make($req->input("password")),
+            ]);
+            $mess = ["type"=>"success","text"=>"Data Berhasil disimpan !!"];
+        }catch (Exception $err){
+            $mess = ["type"=>"danger","text"=>"Data Gagal disimpan !!"];
+        }
           // Redirect
           return redirect('profile');
     }
