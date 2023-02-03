@@ -34,6 +34,7 @@
     <table id="data" width="100%">
         <thead>
             <tr>
+                <th width="5px">No.</th>
                 <th>Nota</th>
                 <th>Tanggal</th>
                 <th>Kasir</th>
@@ -45,6 +46,7 @@
         <tbody>
             @foreach ($rsTransaksi as $transaksi)
                 <tr>
+                    <td>{{$no++}}</td>
                     <td>{{ $transaksi->nota }}</td>
                     <td>{{ date("d-m-Y",strtotime($transaksi->tanggal)) }}</td>
                     <td>{{ $transaksi->name }}</td>

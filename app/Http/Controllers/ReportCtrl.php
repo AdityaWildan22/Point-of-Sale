@@ -32,7 +32,8 @@ class ReportCtrl extends Controller
         $data = [
             "rsTransaksi" =>$transaksi,
             "pajak" => 0,
-            "total" => 0
+            "total" => 0,
+            "no" =>1
         ];
 
         return view("reports.rpt_transaksi",$data);
@@ -55,7 +56,8 @@ class ReportCtrl extends Controller
         $data = [
             "rsTransaksi" =>$transaksi,
             "pajak" => 0,
-            "total" => 0
+            "total" => 0,
+            "no" =>1
         ];
 
         return view("reports.rpt_transaksi",$data);
@@ -73,7 +75,8 @@ class ReportCtrl extends Controller
         $data = [
             "rsTransaksi" =>$transaksi,
             "pajak" => 0,
-            "total" => 0
+            "total" => 0,
+            "no" =>1
         ];
 
         return view("reports.rpt_transaksi",$data);
@@ -104,6 +107,7 @@ class ReportCtrl extends Controller
 
         $data = [
             "rsMenu" =>$menu,
+            "no" =>1
         ];
        
         return view("reports.rpt_menu",$data);
@@ -117,6 +121,7 @@ class ReportCtrl extends Controller
 
         $data = [
             "rsMember" =>$member,
+            "no" =>1
         ];
 
         return view("reports.rpt_member",$data);

@@ -34,6 +34,7 @@
     <table id="data" width="100%">
         <thead>
             <tr>
+                <th width="5px">No.</th>
                 <th>Kode Menu</th>
                 <th>Nama</th>
                 <th>Kategori</th>
@@ -45,6 +46,7 @@
         <tbody>
             @foreach ($rsMenu as $menu)
                 <tr>
+                    <td>{{$no++}}</td>
                     <td>{{ $menu->kd_menu }}</td>
                     <td>{{ $menu->nm_menu }}</td>
                     <td>{{ $menu->kategori }}</td>

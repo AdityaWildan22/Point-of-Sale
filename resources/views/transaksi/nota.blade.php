@@ -44,7 +44,7 @@
                         <td>{{ $rsTransaksi->name }}</td>
                     </tr>
                     <tr>
-                        <td>Member</td>
+                        <td>Pelanggan</td>
                         <td>: </td>
                         <td>{{ $rsTransaksi->nm_member }}</td>
                     </tr>

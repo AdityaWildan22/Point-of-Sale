@@ -33,10 +33,11 @@
             </td>
         </tr>
     </table>
-    <h3>Laporan Data Member</h3>
+    <h3>Laporan Data Pelanggan</h3>
     <table id="data" width="100%">
         <thead>
             <tr>
+                <th width="5px">No.</th>
                 <th>Kode Member</th>
                 <th>Nama</th>
                 <th>Alamat</th>
@@ -48,6 +49,7 @@
         <tbody>
             @foreach ($rsMember as $member)
                 <tr>
+                    <td>{{$no++}}</td>
                     <td>{{ $member->kd_member }}</td>
                     <td>{{ $member->nm_member }}</td>
                     <td>{{ $member->alamat }}</td>
