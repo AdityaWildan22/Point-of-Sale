@@ -17,8 +17,8 @@ $(function () {
     $("#file").click();
   });
 
-   // Ketika file input change
-   $("#file").change(function () {
+  // Ketika file input change
+  $("#file").change(function () {
     setImage(this, "#avatar");
   });
 
@@ -28,15 +28,15 @@ $(function () {
 function setImage(input, target) {
 
   if (input.files && input.files[0]) {
-      var reader = new FileReader();
+    var reader = new FileReader();
 
-      // Mengganti src dari object img#avatar
-      reader.onload = function (e) {
-        $(target).attr('src', e.target.result);
-        $("#foto").val(e.target.result);
-      }
+    // Mengganti src dari object img#avatar
+    reader.onload = function (e) {
+      $(target).attr('src', e.target.result);
+      $("#foto").val(e.target.result);
+    }
 
-      reader.readAsDataURL(input.files[0]);
+    reader.readAsDataURL(input.files[0]);
   }
 }
 
@@ -45,29 +45,29 @@ function showMessage(type, mess, target = "body") {
 
   // Options
   toastr.options = {
-      "positionClass": "toast-top-full-width",
-      "showDuration": "1000",
-      "hideDuration": "1000",
-      "timeOut": "1000",
-      "extendedTimeOut": "1000",
+    "positionClass": "toast-top-full-width",
+    "showDuration": "1000",
+    "hideDuration": "1000",
+    "timeOut": "1000",
+    "extendedTimeOut": "1000",
   };
 
-  // Target Agar bisa tampil pada tampilan full screen
+  // Target Agar bisa tampil pada saat full screen
   toastr.options.target = target;
 
   switch (type) {
-      case "success":
-          toastr.success(mess);
-          break;
-      case "info":
-          toastr.info(mess);
-          break;
-      case "error":
-          toastr.error(mess);
-          break;
-      case "warning":
-          toastr.warning(mess);
-          break;
+    case "success":
+      toastr.success(mess);
+      break;
+    case "info":
+      toastr.info(mess);
+      break;
+    case "error":
+      toastr.error(mess);
+      break;
+    case "warning":
+      toastr.warning(mess);
+      break;
   }
 }
 
@@ -79,9 +79,9 @@ function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.webkitRequestFullscreen) { /* Safari */
-      elem.webkitRequestFullscreen();
+    elem.webkitRequestFullscreen();
   } else if (elem.msRequestFullscreen) { /* IE11 */
-      elem.msRequestFullscreen();
+    elem.msRequestFullscreen();
   }
 }
 
@@ -91,7 +91,7 @@ function closeFullscreen() {
     document.exitFullscreen();
   } else if (document.webkitExitFullscreen) {
     document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { 
+  } else if (document.msExitFullscreen) {
     document.msExitFullscreen();
   }
 }
@@ -104,7 +104,7 @@ function pilih_member(id_member, nama) {
   $("#txtDiskon").val(5000);
   // $("#diskon").html('<span>Rp</span> ' + number_format(10/100 * subtotal));
   // $("#txtDiskon").val(10/100 * subtotal);
-  
+
   // Hitung Ulang Grand Total
   grandtotal();
 
@@ -123,64 +123,64 @@ function pilih_meja(id_member, nama) {
 
 // Pilih Menu / Add Menu
 function add_menu(id_menu, nm_menu, harga) {
-    // Clone menu item
-    var item = $("#tmp-menu").clone();
+  // Clone menu item
+  var item = $("#tmp-menu").clone();
 
-    // Set Informasi Menu
-    item.attr("id", id_menu); // Mengganti nilai attribute id dari tmp-menu menjadi id_menu ( 1 )
-    item.find(".delete").attr("data-id", id_menu);
-    item.removeAttr("style"); // Menghilangkan attribute style , display: none
-    item.find(".item").find("h4").html(nm_menu);
-    item.find(".price").find("h4").html('<span>Rp</span> ' + number_format(harga));
-    item.find(".jumlah").attr("data-harga", harga); // Set Harga pada attribute data-harga
+  // Set Informasi Menu
+  item.attr("id", id_menu); // Mengganti nilai attribute id dari tmp-menu menjadi id_menu ( 1 )
+  item.find(".delete").attr("data-id", id_menu);
+  item.removeAttr("style"); // Menghilangkan attribute style , display: none
+  item.find(".item").find("h4").html(nm_menu);
+  item.find(".price").find("h4").html('<span>Rp</span> ' + number_format(harga));
+  item.find(".jumlah").attr("data-harga", harga); // Set Harga pada attribute data-harga
 
-    // Set Value Input
-    item.find(".txtID").val(id_menu);
-    item.find(".txtNama").val(nm_menu);
-    item.find(".txtHarga").val(harga);
+  // Set Value Input
+  item.find(".txtID").val(id_menu);
+  item.find(".txtNama").val(nm_menu);
+  item.find(".txtHarga").val(harga);
 
-    // Tambahkan ke detail
-    if ($("#" + id_menu).length == 0) {
-        // Jika Belum ada
-        item.appendTo(".detail");
-    } else {
-        // Jika sudah ada , jumlah bertambah
-        var jumlah = parseInt($("#" + id_menu).find(".jumlah").val()) + 1;
-        var subtotal = harga * jumlah;
-        $("#" + id_menu).find(".jumlah").val(jumlah);
-        // Ganti Harga
-        $("#" + id_menu).find(".price").find("h4").html('<span>Rp</span> ' + number_format(subtotal));
-    }
+  // Tambahkan ke detail
+  if ($("#" + id_menu).length == 0) {
+    // Jika Belum ada
+    item.appendTo(".detail");
+  } else {
+    // Jika sudah ada , jumlah bertambah
+    var jumlah = parseInt($("#" + id_menu).find(".jumlah").val()) + 1;
+    var subtotal = harga * jumlah;
+    $("#" + id_menu).find(".jumlah").val(jumlah);
+    // Ganti Harga
+    $("#" + id_menu).find(".price").find("h4").html('<span>Rp</span> ' + number_format(subtotal));
+  }
 
-    // Hitung ulang grand total
-    grandtotal();
+  // Hitung ulang grand total
+  grandtotal();
 }
 
 // Remove Menu from Detail
 function del_menu(e) {
-    var id = "#" + $(e).attr("data-id"); // example : #1
-    $(id).remove();
+  var id = "#" + $(e).attr("data-id"); // example : #1
+  $(id).remove();
 
-    // Hitung ulang grand total
-    grandtotal();
+  // Hitung ulang grand total
+  grandtotal();
 }
 
 //  Change Price Item
 function ganti_harga(e) {
-    var jumlah = parseInt($(e).val());
-    var harga = parseInt($(e).attr("data-harga"));
-    var subtotal = harga * jumlah;
-    $(e).parent().parent().parent().find(".price").find("h4").html('<span>Rp</span> ' + number_format(subtotal));
+  var jumlah = parseInt($(e).val());
+  var harga = parseInt($(e).attr("data-harga"));
+  var subtotal = harga * jumlah;
+  $(e).parent().parent().parent().find(".price").find("h4").html('<span>Rp</span> ' + number_format(subtotal));
 
-    // Hitung ulang grand total
-    grandtotal();
+  // Hitung ulang grand total
+  grandtotal();
 }
 
 // Hitung Grand Total
-function grandtotal(){
+function grandtotal() {
   var total = 0;
   var ppn = 0;
-  $(".detail > .detail-item").each(function (e){
+  $(".detail > .detail-item").each(function (e) {
     var harga = parseInt($(this).find(".jumlah").attr("data-harga"));
     var jumlah = parseInt($(this).find(".jumlah").val());
     total += harga * jumlah;
@@ -210,10 +210,10 @@ function number_format(x) {
 // Save Transaksi
 function save_transaksi() {
   // Validasi
-  if ($("#id_meja").val() == "") { showMessage("error","Maaf Meja Belum Dipilih !!!","#transaksi"); return; }
-  if ($(".detail .detail-item").length == 0) { showMessage("error","Maaf Menu Belum Dipilih !!!","#transaksi"); return; }
+  if ($("#id_meja").val() == "") { showMessage("error", "Maaf Meja Belum Dipilih !!!", "#transaksi"); return; }
+  if ($(".detail .detail-item").length == 0) { showMessage("error", "Maaf Menu Belum Dipilih !!!", "#transaksi"); return; }
 
-  if ($("#id_member").val() == "") { showMessage("error","Maaf Member Belum Dipilih !!!","#transaksi"); return; }
+  if ($("#id_member").val() == "") { showMessage("error", "Maaf Member Belum Dipilih !!!", "#transaksi"); return; }
 
   // Save
   $.ajax({
@@ -228,18 +228,18 @@ function save_transaksi() {
       console.log(data);
       $("#loading").hide();
 
-      if(data.error==0){
+      if (data.error == 0) {
         // Proses Jika berhasil disimpan
-        showMessage(data.type,data.message,"#transaksi");
+        showMessage(data.type, data.message, "#transaksi");
 
         // Cetak nota
-        var url = $("#btn-print").attr("data-url")+"/"+data.id_transaksi;
-        $("#nota").attr("src",url);
+        var url = $("#btn-print").attr("data-url") + "/" + data.id_transaksi;
+        $("#nota").attr("src", url);
 
         // Sembunyikan Save
         $("#btn-save").addClass("d-none");
         $("#btn-new").removeClass("d-none");
-    }
+      }
     },
     error: function (data) {
       console.log(data);
@@ -249,7 +249,7 @@ function save_transaksi() {
 }
 
 //Reset
-function new_transaksi(){
+function new_transaksi() {
   //Bersihkan View
   $(".detail .detail-item").remove();
   $("#nm_member").html("MEMBER");
@@ -268,13 +268,13 @@ function new_transaksi(){
   $("#btn-save").removeClass("d-none");
   $("#btn-new").addClass("d-none");
 }
-function cetak(){
+function cetak() {
   $(window.print());
 }
 //Searching transaksi
 function searching() {
-    var value =  $("#search").val().toLowerCase();
-    $(".menu-list .menu-item").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+  var value = $("#search").val().toLowerCase();
+  $(".menu-list .menu-item").filter(function () {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  });
 }
